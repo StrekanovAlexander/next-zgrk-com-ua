@@ -1,0 +1,39 @@
+.scenes {
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  // overflow: hidden;
+  padding-bottom: 2em;
+  h1 {
+    font-size: 4em;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  h1, h2 {
+    font-family: "AA American Captain";
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+#scene-1 {
+  background-image: url(../images/slide-03.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 8em;
+  h1 {
+    color: white;
+    letter-spacing: .1em;
+    text-shadow: 0 .05em black; 
+  }
+  h2 {
+    color: #ff4500;
+    letter-spacing: .15em;
+    text-shadow: 0 .05em black; 
+  }
+
+}
+

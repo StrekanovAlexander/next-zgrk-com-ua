@@ -1,0 +1,188 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "AA American Captain";
+  src: url("fonts/aa_american_captain.ttf");
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+  border-top: 4px solid white;
+  border-bottom: 4px solid white;
+  display: inline-block;
+  height: 36px;
+  margin: 1em 0;
+  position: relative;
+  width: 32px;
+}
+
+.logo::before {
+  content: " ";
+  position: absolute;
+  height: 4px;
+  width: 32px;
+  left: 0;
+  top: 12px;
+  background-color: white;
+}
+
+.logo::after {
+  content: " ";
+  position: absolute;
+  border-top: 4px solid #ff4500;
+  border-bottom: 4px solid #ff4500;
+  top: 4px;
+  height: 20px;
+  right: 0;
+  width: 16px;
+}
+
+.brand {
+  align-items: center;
+  display: flex;
+  text-decoration: none;
+}
+
+.brand span + span {
+  font-family: "AA American Captain";
+  font-size: 1.5em;
+  color: white;
+  margin-left: 0.25em;
+}
+
+.card {
+  background-color: orangered;
+}
+.card img {
+  width: 100%;
+}
+
+.intro {
+  height: 150px;
+  overflow: hidden;
+  width: 150px;
+}
+.intro img {
+  cursor: pointer;
+  transition: width 2s;
+  width: 150px;
+}
+.intro img:hover {
+  width: 200px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 95%;
+}
+
+nav {
+  background-color: #242424;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav ul {
+  align-items: center;
+  display: flex;
+  list-style-type: none;
+}
+
+.nav ul li {
+  font-size: 0.9em;
+}
+
+.nav ul li a {
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-bottom-color: #242424;
+  color: lightgray;
+  display: block;
+  padding: 0.75em;
+  text-decoration: none;
+  transition: border-bottom 1.5s, color 1.5s;
+}
+
+.nav ul li a:hover {
+  border-bottom-color: white;
+  color: white;
+}
+
+.nav ul li a.selected {
+  border-bottom-color: orangered;
+  color: white;
+}
+
+@media (max-width: 640px) {
+  .nav, .nav ul {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.row__space_between {
+  justify-content: space-between;
+}
+
+.scenes {
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  padding-bottom: 2em;
+}
+.scenes h1 {
+  font-size: 4em;
+}
+.scenes h2 {
+  font-size: 2em;
+}
+.scenes h1, .scenes h2 {
+  font-family: "AA American Captain";
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#scene-1 {
+  background-image: url(../images/slide-03.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 8em;
+}
+#scene-1 h1 {
+  color: white;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0.05em black;
+}
+#scene-1 h2 {
+  color: #ff4500;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0.05em black;
+}
+
+/*# sourceMappingURL=style.css.map */

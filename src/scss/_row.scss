@@ -1,0 +1,9 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.row__space_between {
+  justify-content: space-between;
+}

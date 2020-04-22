@@ -1,0 +1,43 @@
+.logo {
+  border-top: 4px solid white;
+  border-bottom: 4px solid white;
+  display: inline-block;
+  height: 36px;
+  margin: 1em 0;
+  position: relative;
+  width: 32px;
+}
+
+.logo::before {
+  content: ' ';
+  position: absolute;
+  height: 4px;
+  width: 32px;
+  left: 0;
+  top: 12px;
+  background-color: white;
+}
+
+.logo::after {
+  content: ' ';
+  position: absolute;
+  border-top: 4px solid #ff4500;
+  border-bottom: 4px solid #ff4500;
+  top: 4px;
+  height: 20px;
+  right: 0;
+  width: 16px;
+}
+
+.brand {
+  align-items: center;
+  display: flex;
+  text-decoration: none;
+}
+
+.brand span + span {
+  font-family: "AA American Captain";
+  font-size: 1.5em;
+  color: white;
+  margin-left: .25em;
+}
