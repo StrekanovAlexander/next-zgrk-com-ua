@@ -10,6 +10,15 @@
   padding: 0;
 }
 
+.container {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.hidden {
+  display: none;
+}
+
 @font-face {
   font-family: "AA American Captain";
   src: url("fonts/aa_american_captain.ttf");
@@ -18,7 +27,54 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.logo {
+nav {
+  background-color: #242424;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__brand {
+  align-items: center;
+  display: flex;
+  text-decoration: none;
+}
+
+.nav__brand span + span {
+  font-family: "AA American Captain";
+  font-size: 1.5em;
+  color: white;
+  margin-left: 0.25em;
+}
+
+.nav__btn {
+  border-top: 2px solid lightgray;
+  border-bottom: 2px solid lightgray;
+  cursor: pointer;
+  display: none;
+  height: 20px;
+  position: relative;
+  width: 24px;
+}
+.nav__btn::before {
+  content: " ";
+  position: absolute;
+  height: 2px;
+  width: 24px;
+  left: 0;
+  top: 7px;
+  background-color: lightgray;
+}
+
+.nav__logo {
   border-top: 4px solid white;
   border-bottom: 4px solid white;
   display: inline-block;
@@ -27,8 +83,7 @@ body {
   position: relative;
   width: 32px;
 }
-
-.logo::before {
+.nav__logo::before {
   content: " ";
   position: absolute;
   height: 4px;
@@ -37,8 +92,7 @@ body {
   top: 12px;
   background-color: white;
 }
-
-.logo::after {
+.nav__logo::after {
   content: " ";
   position: absolute;
   border-top: 4px solid #ff4500;
@@ -49,69 +103,23 @@ body {
   width: 16px;
 }
 
-.brand {
-  align-items: center;
+.nav__list {
+  list-style: none;
   display: flex;
+}
+.nav__list a {
+  color: lightgray;
+  font-size: 0.9em;
   text-decoration: none;
 }
-
-.brand span + span {
-  font-family: "AA American Captain";
-  font-size: 1.5em;
+.nav__list a:hover {
   color: white;
-  margin-left: 0.25em;
 }
 
-.card {
-  background-color: orangered;
+.nav__list_common {
+  flex-direction: row;
 }
-.card img {
-  width: 100%;
-}
-
-.intro {
-  height: 150px;
-  overflow: hidden;
-  width: 150px;
-}
-.intro img {
-  cursor: pointer;
-  transition: width 2s;
-  width: 150px;
-}
-.intro img:hover {
-  width: 200px;
-}
-
-.container {
-  margin: 0 auto;
-  width: 95%;
-}
-
-nav {
-  background-color: #242424;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.nav {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav ul {
-  align-items: center;
-  display: flex;
-  list-style-type: none;
-}
-
-.nav ul li {
-  font-size: 0.9em;
-}
-
-.nav ul li a {
+.nav__list_common li a {
   border-bottom-width: 4px;
   border-bottom-style: solid;
   border-bottom-color: #242424;
@@ -121,68 +129,40 @@ nav {
   text-decoration: none;
   transition: border-bottom 1.5s, color 1.5s;
 }
-
-.nav ul li a:hover {
+.nav__list_common li a:hover {
   border-bottom-color: white;
-  color: white;
 }
-
-.nav ul li a.selected {
+.nav__list_common li a.selected {
   border-bottom-color: orangered;
-  color: white;
 }
 
-@media (max-width: 640px) {
-  .nav, .nav ul {
-    align-items: center;
-    flex-direction: column;
-  }
-}
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.row__space_between {
-  justify-content: space-between;
-}
-
-.scenes {
-  background-attachment: fixed;
-  background-position: center center;
-  background-size: cover;
-  height: 100vh;
-  padding-bottom: 2em;
-}
-.scenes h1 {
-  font-size: 4em;
-}
-.scenes h2 {
-  font-size: 2em;
-}
-.scenes h1, .scenes h2 {
-  font-family: "AA American Captain";
-  text-align: center;
-  text-transform: uppercase;
-}
-
-#scene-1 {
-  background-image: url(../images/slide-03.jpg);
-  display: flex;
+.nav__list_mobile {
+  background-color: #242424;
   flex-direction: column;
-  justify-content: space-between;
-  padding-top: 8em;
+  position: absolute;
+  top: 4em;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 1s;
 }
-#scene-1 h1 {
-  color: white;
-  letter-spacing: 0.1em;
-  text-shadow: 0 0.05em black;
+.nav__list_mobile li {
+  padding: 0.5em 0;
+  text-align: center;
 }
-#scene-1 h2 {
-  color: #ff4500;
-  letter-spacing: 0.15em;
-  text-shadow: 0 0.05em black;
+
+@media (max-width: 1024px) {
+  .nav__btn {
+    display: block;
+  }
+
+  .nav__list_common {
+    display: none;
+  }
+
+  .nav__list_mobile {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

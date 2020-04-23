@@ -1,51 +1,135 @@
 nav {
   background-color: #242424;
+  color: white;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 999;
 }
 
 .nav {
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between;  
 }
 
-.nav ul {
+.nav__brand {
   align-items: center;
   display: flex;
-  list-style-type: none;
-}
-
-.nav ul li {
-  font-size: .9em;
-}
-
-.nav ul li a {
-  border-bottom-width: 4px;
-  border-bottom-style: solid;
-  border-bottom-color: #242424;
-  color: lightgray;
-  display: block;
-  padding: .75em;
   text-decoration: none;
-  transition: border-bottom 1.5s, color 1.5s;
 }
 
-.nav ul li a:hover {
-  border-bottom-color: white;
+.nav__brand span + span {
+  font-family: "AA American Captain";
+  font-size: 1.5em;
   color: white;
+  margin-left: .25em;
 }
 
-.nav ul li a.selected {
-  border-bottom-color: rgb(255, 69, 0);
-  color: white;
-}
-
-@media (max-width: 640px) {
-  .nav, .nav ul {
-    align-items: center;
-    flex-direction: column;
+.nav__btn {
+  border-top: 2px solid lightgray;
+  border-bottom: 2px solid lightgray;
+  cursor: pointer;
+  display: none;
+  height: 20px;
+  position: relative;
+  width: 24px;
+  &::before {
+    content: ' ';
+    position: absolute;
+    height: 2px;
+    width: 24px;
+    left: 0;
+    top: 7px;
+    background-color: lightgray;
   }
 }
 
+.nav__logo {
+  border-top: 4px solid white;
+  border-bottom: 4px solid white;
+  display: inline-block;
+  height: 36px;
+  margin: 1em 0;
+  position: relative;
+  width: 32px;
+  &::before {
+    content: ' ';
+    position: absolute;
+    height: 4px;
+    width: 32px;
+    left: 0;
+    top: 12px;
+    background-color: white;
+  }
+  &::after {
+    content: ' ';
+    position: absolute;
+    border-top: 4px solid #ff4500;
+    border-bottom: 4px solid #ff4500;
+    top: 4px;
+    height: 20px;
+    right: 0;
+    width: 16px;
+  }  
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  a {
+    color: lightgray;
+    font-size: .9em;
+    text-decoration: none;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.nav__list_common {
+  flex-direction: row;
+  li a {
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-bottom-color: #242424;
+    color: lightgray;
+    display: block;
+    padding: .75em;
+    text-decoration: none;
+    transition: border-bottom 1.5s, color 1.5s;
+    &:hover {
+      border-bottom-color: white;
+    }
+    &.selected {
+      border-bottom-color: rgb(255, 69, 0);  
+    }
+  }  
+}
+
+.nav__list_mobile {
+  background-color: #242424;
+  flex-direction: column;
+  position: absolute;
+  top: 4em;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 1s;
+  li {
+    padding: .5em 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav__btn {
+    display: block;
+  }
+  .nav__list_common {
+    display: none;
+  }
+  .nav__list_mobile {
+    opacity: 1;
+  }
+}
