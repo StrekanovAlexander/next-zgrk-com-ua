@@ -26,3 +26,6 @@ window.addEventListener('resize', function() {
 function display(elem) {
   elem.style.display = elem.style.display === 'block' ? 'none' : 'block';
 }
+
+// Scenes
+
