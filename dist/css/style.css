@@ -23,6 +23,11 @@
   color: #ff4500;
 }
 
+p {
+  margin: 1.5em 0;
+  text-align: justify;
+}
+
 @font-face {
   font-family: "AA American Captain";
   src: url("fonts/aa_american_captain.ttf");
@@ -229,7 +234,13 @@ section h2 {
 }
 
 .history {
-  padding: 6em 0;
+  padding-top: 6em;
+}
+.history .container {
+  background-color: white;
+}
+.history .container div {
+  column-count: 3;
 }
 
 @media (max-width: 1024px) {
@@ -242,6 +253,18 @@ section h2 {
 
   .intro {
     height: auto;
+  }
+
+  .history .container div {
+    column-count: 2;
+  }
+}
+@media (max-width: 489px) {
+  .history .container div {
+    column-count: 1;
+  }
+  .history .container div p {
+    font-size: 0.9em;
   }
 }
 

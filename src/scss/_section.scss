@@ -55,7 +55,13 @@ section {
 }
 
 .history {
-  padding: 6em 0;
+  padding-top: 6em;
+  .container {
+    background-color: white;
+    & div {
+      column-count: 3;
+    }
+  }
 }
 
 @media (max-width: 1024px) {
@@ -70,4 +76,25 @@ section {
   .intro {
     height: auto;
   }  
+  .history {
+    .container {
+      & div {
+        column-count: 2;
+      }
+    }
+  }
 }
+
+@media (max-width: 489px) {
+  .history {
+    .container {
+      & div {
+        column-count: 1;
+        p {
+          font-size: .9em;
+        }
+      }
+    }
+  }
+}
+
