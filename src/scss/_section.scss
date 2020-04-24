@@ -15,6 +15,7 @@ section {
 .intro {
   background-attachment: fixed;
   background-image: url('../images/intro.jpg');
+  background-color: black;
   background-position: center center;
   background-size: cover;
   color: white;
@@ -60,6 +61,11 @@ section {
     background-color: white;
     & div {
       column-count: 3;
+    }
+    & p {
+      img {
+        width: 100%;
+      }
     }
   }
 }
