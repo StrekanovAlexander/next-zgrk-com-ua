@@ -23,7 +23,7 @@ nav {
   font-family: "AA American Captain";
   font-size: 1.5em;
   color: white;
-  margin-left: .25em;
+  margin-left: .5em;
 }
 
 .nav__btn {
@@ -75,9 +75,11 @@ nav {
 }
 
 .nav__list {
+  position: relative;
   list-style: none;
   display: flex;
-  a {
+  flex-direction: row;
+  li a {
     color: lightgray;
     font-size: .9em;
     text-decoration: none;
@@ -85,10 +87,6 @@ nav {
       color: white;
     }
   }
-}
-
-.nav__list_common {
-  flex-direction: row;
   li a {
     border-bottom-width: 4px;
     border-bottom-style: solid;
@@ -114,22 +112,25 @@ nav {
   top: 4em;
   left: 0;
   right: 0;
-  opacity: 0;
   transition: opacity 1s;
   li {
     padding: .5em 0;
     text-align: center;
   }
+  li a {
+    border:0;
+    display: block;
+    padding: .25em;
+    transition: none;
+  }  
+  z-index: 999;
 }
 
 @media (max-width: 1024px) {
   .nav__btn {
     display: block;
   }
-  .nav__list_common {
+  .nav__list {
     display: none;
-  }
-  .nav__list_mobile {
-    opacity: 1;
   }
 }

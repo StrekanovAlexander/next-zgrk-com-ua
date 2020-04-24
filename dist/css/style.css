@@ -52,7 +52,7 @@ nav {
   font-family: "AA American Captain";
   font-size: 1.5em;
   color: white;
-  margin-left: 0.25em;
+  margin-left: 0.5em;
 }
 
 .nav__btn {
@@ -104,22 +104,20 @@ nav {
 }
 
 .nav__list {
+  position: relative;
   list-style: none;
   display: flex;
+  flex-direction: row;
 }
-.nav__list a {
+.nav__list li a {
   color: lightgray;
   font-size: 0.9em;
   text-decoration: none;
 }
-.nav__list a:hover {
+.nav__list li a:hover {
   color: white;
 }
-
-.nav__list_common {
-  flex-direction: row;
-}
-.nav__list_common li a {
+.nav__list li a {
   border-bottom-width: 4px;
   border-bottom-style: solid;
   border-bottom-color: #242424;
@@ -129,10 +127,10 @@ nav {
   text-decoration: none;
   transition: border-bottom 1.5s, color 1.5s;
 }
-.nav__list_common li a:hover {
+.nav__list li a:hover {
   border-bottom-color: white;
 }
-.nav__list_common li a.selected {
+.nav__list li a.selected {
   border-bottom-color: orangered;
 }
 
@@ -143,12 +141,18 @@ nav {
   top: 4em;
   left: 0;
   right: 0;
-  opacity: 0;
   transition: opacity 1s;
+  z-index: 999;
 }
 .nav__list_mobile li {
   padding: 0.5em 0;
   text-align: center;
+}
+.nav__list_mobile li a {
+  border: 0;
+  display: block;
+  padding: 0.25em;
+  transition: none;
 }
 
 @media (max-width: 1024px) {
@@ -156,12 +160,8 @@ nav {
     display: block;
   }
 
-  .nav__list_common {
+  .nav__list {
     display: none;
-  }
-
-  .nav__list_mobile {
-    opacity: 1;
   }
 }
 
